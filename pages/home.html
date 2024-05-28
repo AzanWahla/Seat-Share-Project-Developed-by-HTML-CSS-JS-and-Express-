@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./assets/styles/Homestyle.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="./assets/script.js"></script>
+    <link rel="stylesheet" href="./assets/styles/footer.css">
+    <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://d3i4yxtzktqr9n.cloudfront.net/uber-sites/99c4bc580c8b57b7.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <title>SeatShare</title>
+
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0; /* Adjust this if you see any margin issues */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white fw-bold d-flex align-items-center p-lg-2 " href="/">
+            <img src="https://images.ctfassets.net/7qj0pq66qmy0/4OhYWRomjdbEereillakVN/984a2da7ad2be76ceb42ebd39d77ccd1/Homepage_hero_458x397.png?w=2500&q=60&fm=webp"
+                 alt="Logo" width="60" height="60" class="me-2"> <!-- Add your logo here -->
+            SeatShare
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown me-3 p-lg-3">
+                    <a class="nav-link btn btn-outline-warning text-white dropdown-toggle" href="#" id="loginDropdown"
+                       role="button" aria-expanded="false">
+                        Login
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="loginDropdown">
+                        <li><a class="dropdown-item" href="/signing_rider">As User</a></li>
+                        <li><a class="dropdown-item" href="/signing_driver">As Driver</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3 p-lg-3">
+                    <a class="nav-link btn btn-outline-warning text-white dropdown-toggle" href="#" id="signupDropdown"
+                       role="button" aria-expanded="false">
+                        Sign up
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="signupDropdown">
+                        <li><a class="dropdown-item" href="/signup_rider">As User</a></li>
+                        <li><a class="dropdown-item" href="/signup_driver">As Driver</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<section id="main__cta">
+    <div class="container ">
+        <div class="split ">
+            <div class="main__cta__rectangle bg-dark bg-opacity-50">
+                <div class="split main__cta__options bg-light text-black">
+                    <div class="main__cta__card" data-aos="zoom-in">
+                        <img
+                                src="https://www.uber-assets.com/image/upload/v1558389718/assets/8e/33c8c0-f7e9-467c-924b-c70232943a47/original/Earn-filled.svg"
+                                alt=""
+                        />
+                        Make errands or deliveries
+                    </div>
+                    <div class="main__cta__card" data-aos="zoom-in">
+                        <img
+                                src="https://www.uber-assets.com/image/upload/v1542256606/assets/7d/5a4852-3b2a-4466-96de-602dfb62dc1b/original/restaurant-outlined.svg"
+                                alt=""
+                        />
+                        Order a meal
+                    </div>
+                    <div class="main__cta__card" data-aos="zoom-in">
+                        <img
+                                src="https://www.uber-assets.com/image/upload/v1542252540/assets/6d/87af17-3970-4d01-8936-1b0ba102ea6e/original/car-front-outlined.svg"
+                                alt=""
+                        />
+                        Get around with SeatShare
+                    </div>
+                </div>
+                <div class="main__cta__text">
+                    <h1>Hit the road and generate income</h1>
+                    <p class="sous-titre">
+                        Join the platform that gives you access to the largest network of active passengers.
+                    </p>
+                    <a href="/signup_driver" class="btn1">Sign up to become a driver</a>
+                    <a href="/signup_rider" class="btn1">Sign up for a ride</a>
+
+                </div>
+            </div>
+            <div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="business-header">
+    <div class="container ">
+        <div class="business-header__text">
+            <h3 data-aos="fade-left">SeatShare for Business</h3>
+            <p>
+                Change the way your employees move and work
+                restore.
+            </p>
+            <a href="https://www.investopedia.com/terms/f/free_rider_problem.asp" target="_blank" class="btn1">Find out
+                how</a>
+        </div>
+    </div>
+</section>
+
+<section data-aos="zoom-in" id="engagements__section" class="bg-dark">
+    <div style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="container ">
+        <h3>Wherever you go, your safety is our priority</h3>
+        <div class="split">
+            <div class="engagements__section__flex">
+                <img
+                        src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_558,h_372/v1613520218/assets/3e/e98625-31e6-4536-8646-976a1ee3f210/original/Safety_Home_Img2x.png"
+                        alt=""
+                />
+                <h4 data-aos="fade-left">Our commitment to your safety</h4>
+                <p class="sous-titre">
+                    Each of our security features and policies
+                    Community Charter helps create a safe environment
+                    for our users.
+                </p>
+
+            </div>
+            <div class="engagements__section__flex">
+                <img
+                        src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_558,h_372/v1613520285/assets/c2/91ea9c-90d7-4c36-a740-d7844536694e/original/Cities_Home_Img2x.png"
+                        alt=""
+                />
+                <h4 data-aos="fade-left">We put more than 10,000 cities in motion</h4>
+                <p class="sous-titre">
+                    The application is available from thousands of cities across the
+                    worldwide, you can also order groceries if you
+                    are far from home.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section data-aos="fade-up" id="infos__section" class="bg-gradient  bg-opacity-75">
+    <div class="container">
+        <div class="split">
+            <div class="infos__section__card">
+                <img
+                        src="https://www.uber-assets.com/image/upload/q_auto:eco,c_fill,w_24,h_24/v1542256135/assets/dd/c53d7b-8921-4dc7-93f4-45fb59f4ffb9/original/person-multiple-outlined.svg"
+                        alt=""
+                />
+                <p class="titre">À propos</p>
+                <p class="sous-titre">
+                    Discover our history, our motivations and our world
+                    of opportunities.
+                </p>
+                <a href="#" class="text-cta text-decoration-none text-primary">Learn more</a>
+            </div>
+            <div class="infos__section__card">
+                <img
+                        src="https://www.uber-assets.com/image/upload/q_auto:eco,c_fill,w_24,h_24/v1542254244/assets/eb/68c631-5041-4eeb-9114-80048a326782/original/document-outlined.svg"
+                        alt=""
+                />
+                <p class="titre">Press area</p>
+                <p class="sous-titre">
+                    Follow the news of our features, initiatives and
+                    partnerships.
+                </p>
+                <a href="#" class="text-cta text-decoration-none text-primary">Learn more</a>
+            </div>
+            <div class="infos__section__card">
+                <img
+                        src="https://www.uber-assets.com/image/upload/q_auto:eco,c_fill,w_24,h_24/v1542255370/assets/64/58118a-0ece-4f80-93ee-8041b53593d5/original/home-outlined.svg"
+                        alt=""
+                />
+                <p class="titre">Citizens of the world</p>
+                <p class="sous-titre">
+                    Find out what we are doing to make an impact
+                    positive in the cities we serve.
+                </p>
+                <a href="#" class="text-cta text-decoration-none text-primary">Learn more</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+<section class="py-28 bg-dark overflow-hidden position-relative" data-aos="zoom-in" data-aos-delay="200">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <figure class="mb-0 position-relative">
+                    <img class="img-fluid position-relative" src="./assets/images/driver.jpg" alt=""
+                         style="z-index: 2;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 mt-6 ms-6 mt-lg-12 ms-lg-12"
+                         style="background: #2C2C2C; z-index: 1; opacity: 0.4;"></div>
+                </figure>
+            </div>
+            <div class="col-12 col-md-6 text-md-end">
+                <div class="mw-sm mx-auto ms-md-0">
+                    <h3 class="mb-12 text-primary display-5 lh-sm font-heading fw-bold" data-aos="fade-down">Flexible
+                        Travel Options</h3>
+                    <h4 class="mb-10 lh-sm text-white  text-md-center">Seat-sharing provides flexible travel options,
+                        allowing passengers to find rides that match their schedules and routes. This flexibility can be
+                        especially useful in areas with limited public transportation.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<section class="py-28 bg-dark overflow-hidden position-relative" data-aos="zoom-out">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-12 mb-md-0">
+                <div class="mw-sm mx-auto ms-md-0">
+                    <h3 class="mb-12 text-primary display-5 lh-sm font-heading fw-bold " data-aos="fade-up">Cost
+                        Efficiency</h3>
+                    <h4 class="mb-10  lh-sm text-white  ">Ride-sharing significantly reduces travel costs for both
+                        drivers and passengers by sharing expenses such as fuel and maintenance. This makes
+                        transportation more affordable for everyone involved.</h4>
+                    <a class="btn btn-light d-block d-md-inline-block" href="#">Go back to Homepage</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <figure class="mb-0 position-relative">
+                    <img class="img-fluid position-relative" src="./assets/images/dollar.jpg" alt=""
+                         style="z-index: 2;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 mt-6 ms-6 mt-lg-12 ms-lg-12"
+                         style="background: #2C2C2C; z-index: 1; opacity: 0.4;"></div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<section class="py-28 bg-dark overflow-hidden position-relative" data-aos="fade-left">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <figure class="mb-0 position-relative">
+                    <img class="img-fluid position-relative" src="./assets/images/femaledriver.jpg" alt=""
+                         style="z-index: 2; height: 500px;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 mt-6 ms-6 mt-lg-12 ms-lg-12"
+                         style="background: #2C2C2C; z-index: 1; opacity: 0.4;"></div>
+                </figure>
+            </div>
+            <div class="col-12 col-md-6 text-md-end">
+                <div class="mw-sm mx-auto ms-md-0">
+                    <h3 class="mb-12 text-primary display-5 lh-sm font-heading fw-bold text-md-center"
+                        data-aos="fade-left">Financial Support</h3>
+                    <h4 class="mb-10 lh-sm text-white  text-md-center">Drivers can offset the costs of owning and
+                        maintaining a vehicle by earning additional income through ride-sharing. This can be
+                        particularly beneficial for individuals facing financial challenges.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+
+<section class="py-4 " data-aos="fade-right">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Clients</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-left">
+                                <img src="./assets/images/client.png" alt="" height="50">
+                                <span class="display-4">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Project</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-right">
+                                <img src="./assets/images/project.png" alt="" height="47" width="52">
+                                <span class="display-4">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>Open Project</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-up">
+                                <img src="./assets/images/open.png" alt="" class="img-fluid"
+                                     style="height: 30px; width: 30px;">
+                                <span class="display-4">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Invoices</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-down">
+                                <img src="./assets/images/invoice.png" alt="" height="50" width="50">
+                                <span class="display-4">44</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card">
+                    <img class="card-img" src="./assets/images/deal.jpg" alt="" height="350">
+                    <div class="card-img-overlay d-flex">
+                        <div class="my-auto mx-auto text-center">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="bg-black">
+    <br>
+</div>
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Comsats University Lahore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>
+                                <a class="text-decoration-none" href="tel:0301-1234506">0301-1234506</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>
+                                <a class="text-decoration-none" href="mailto:seatshare@info.com">seatshare@info.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="/"><img
+                                    src="./assets/images/Black Gold Modern Minimalist Auto Garage Logo.png"
+                                    class="img-fluid rounded-4" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>
+
+                                Connect drivers with empty seats to local passengers, making travel more affordable and
+                                efficient. Experience smart, sustainable transportation with SeatShare.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a class="text-decoration-none" href="/">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">about</a></li>
+                            <li><a class="text-decoration-none" href="#">services</a></li>
+                            <li><a class="text-decoration-none" href="#">portfolio</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                            <li><a class="text-decoration-none" href="#">About us</a></li>
+                            <li><a class="text-decoration-none" href="#">Our Services</a></li>
+                            <li><a class="text-decoration-none" href="#">Expert Team</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact us</a></li>
+                            <li><a class="text-decoration-none" href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <label for="f-mail">
+                                </label><input id="f-mail" type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2018, All Right Reserved <a
+                                href="/">SeatShare</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a class="text-decoration-none" href="/">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">Terms</a></li>
+                            <li><a class="text-decoration-none" href="#">Privacy</a></li>
+                            <li><a class="text-decoration-none" href="#">Policy</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous">
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous">
+
+</script>
+
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

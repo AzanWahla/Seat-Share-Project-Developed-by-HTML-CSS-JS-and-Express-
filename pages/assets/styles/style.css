@@ -1,0 +1,483 @@
+header {
+    padding-block: 1.5rem;
+  }
+
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav a {
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    transition: all 300ms ease;
+  }
+  
+  header nav a:hover {
+    border-radius: 30px;
+    background: #333;
+  }
+  
+  .nav-links,
+  header nav div:first-of-type {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav__cta {
+    background: var(--clr-neutral-100);
+    color: var(--clr-neutral-900);
+    border-radius: 30px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav__cta:hover {
+    background: var(--clr-neutral-100);
+  }
+  
+  .hamburger {
+    cursor: pointer;
+    display: none;
+  }
+  
+  .hamburger-bar {
+    display: block;
+    margin-top: 5px;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  @media (max-width: 50rem) {
+    .hamburger {
+      display: block;
+    }
+  
+    .hamburger.active .hamburger-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active .hamburger-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .hamburger-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  
+    .nav-links {
+      position: fixed;
+      left: 0;
+      top: -100%;
+      gap: 0;
+      flex-direction: column;
+      background: var(--clr-neutral-900);
+      width: 100vw;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .nav-links.active {
+      top: 70px;
+    }
+    .nav-links.active:first-child {
+      top: 220px;
+    }
+  
+    header nav ul li {
+      margin: 1rem 0;
+    }
+  }
+  
+/* MAIN CTA */
+
+section#main__cta {
+  padding-block: 4rem;
+
+  background-image: url("https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_630,h_354/v1653688498/assets/2c/3833ca-a2eb-4da4-9879-51193ea88f87/original/DotCom_Update_Earner_bg_med2x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main__cta__rectangle {
+  display: flex;
+  flex-direction: column;
+}
+.main__cta__options {
+  padding: 3rem;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+.main__cta__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+.main__cta__text {
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.main__cta__text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.sous-titre {
+  opacity: 0.8;
+}
+.text-cta {
+  opacity: 0.8;
+}
+.text-cta::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 5px;
+  left: 0;
+  position: relative;
+}
+
+/* BUSINESS HEADER */
+
+section#business-header {
+  background-image: url("https://www.uber-assets.com/image/upload/v1613106985/assets/0e/47aa71-35cb-459a-a975-78c61ea300e2/original/HP-U4B-NYC-bkg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding-block: 4rem;
+}
+.business-header__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.business-header__text h3 {
+  font-size: 2.5rem;
+}
+.business-header__text p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+
+
+/* Form Styles */
+body {
+    background-image: linear-gradient(to right, #7B1FA2, #E91E63);
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+}
+
+.section .section-center {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+#booking {
+    font-family: 'Raleway', sans-serif;
+}
+
+.booking-form {
+    position: relative;
+    max-width: 642px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    overflow: hidden;
+    background-image: url('https://i.imgur.com/8z1tx3u.jpg');
+    background-size: cover;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+.booking-form::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.booking-form .form-header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.booking-form .form-header h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 42px;
+    margin: 0px;
+    color: #fff;
+}
+
+.booking-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.booking-form .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 60px;
+    padding: 0px 25px;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    box-shadow: 0px 0px 0px 2px transparent;
+    transition: 0.2s;
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form .form-control:focus {
+    box-shadow: 0px 0px 0px 2px #ff8846;
+}
+
+.booking-form input[type="date"].form-control {
+    padding-top: 16px;
+}
+
+.booking-form input[type="date"].form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form input[type="date"].form-control+.form-label {
+    opacity: 1;
+    top: 10px;
+}
+
+.booking-form select.form-control {
+    appearance: none;
+}
+
+.booking-form select.form-control:invalid {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.booking-form select.form-control+.select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+    content: '\279C';
+    display: block;
+    transform: rotate(90deg);
+}
+
+.booking-form select.form-control option {
+    color: #000;
+}
+
+.booking-form .form-label {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    opacity: 0;
+    color: #ff8846;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    height: 15px;
+    line-height: 15px;
+    transition: 0.2s all;
+}
+
+.booking-form .form-group.input-not-empty .form-control {
+    padding-top: 16px;
+}
+
+.booking-form .form-group.input-not-empty .form-label {
+    opacity: 1;
+    top: 10px;
+}
+
+.booking-form .submit-btn {
+    color: #fff;
+    background-color: #e35e0a;
+    font-weight: 700;
+    height: 60px;
+    padding: 10px 30px;
+    width: 100%;
+    border-radius: 40px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.3px;
+    transition: 0.2s all;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+    opacity: 0.9;
+}
+
+/* Card Styles */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.booking-card-wrapper {
+    display: flex;
+    background-color: var(--spring-wood);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 800px;
+}
+
+.booking-card-image {
+    flex: 1;
+}
+
+.booking-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-card-content {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.booking-card-description h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.booking-card-description p {
+    margin-bottom: 20px;
+    color: var(--fuscous-gray);
+}
+
+.booking-card-details {
+    background-color: #e4e4e3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: hsl(0, 0%, 45%);
+    margin-top: 5px;
+}
+
+.reviews i {
+    color: var(--faded-jade);
+    margin-right: 2px;
+}
+
+.reviews .amount {
+    margin-left: 5px;
+}
+
+.side-note {
+    font-size: 12px;
+    color: hsl(0, 0%, 45%);
+    margin-top: 10px;
+}
+
+button {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--hippie-blue);
+    color: var(--spring-wood);
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.right-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator {
+    width: 100%;
+    height: 50px;
+    background-color: #0c0b0b; /* Customize the color as needed */
+    margin: 40px 0; /* Adjust the margin to fit your layout */
+}
+
+#star{
+   color: rgb(192, 126, 40);
+}

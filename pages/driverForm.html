@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/driverform.css">
+
+    <!-- <link rel="stylesheet" href="card.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Tajawal:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-9/assets/css/registration-9.css">
+    <link rel="stylesheet" href="./assets/script.js">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <script defer src="./assets/script.js"></script>
+    <style>
+        /* Custom CSS to handle hover dropdown */
+        .stops {
+            margin-top: 20px;
+        }
+
+        .stops ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .stops ul li {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .stops ul li i {
+            margin-right: 5px;
+        }
+
+        .stops ul li:not(:last-child)::after {
+            content: "\f178";
+            font-family: "Font Awesome 5 Free", sans-serif;
+            font-weight: 900;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .wrapper {
+            background-image: url(https://cdn.pixabay.com/photo/2018/10/16/07/07/stars-3750824_1280.png);
+        }
+
+        #booking {
+            background-image: url(https://img.freepik.com/free-photo/red-light-round-podium-black-background-mock-up_43614-950.jpg?t=st=1716542657~exp=1716546257~hmac=03cb7b1418ca15548a1775ecbfe1268491f72c4d40acb1b93bb2e84e85d5f281&w=740);
+            background-size: auto;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0; /* Adjust this if you see any margin issues */
+        }
+    </style>
+</head>
+<body class="bg-black ">
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white fw-bold d-flex align-items-center p-lg-2 " href="/">
+            <img src="https://images.ctfassets.net/7qj0pq66qmy0/4OhYWRomjdbEereillakVN/984a2da7ad2be76ceb42ebd39d77ccd1/Homepage_hero_458x397.png?w=2500&q=60&fm=webp"
+                 alt="Logo" width="60" height="60" class="me-2"> <!-- Add your logo here -->
+            SeatShare
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown me-3 p-lg-3">
+                    <a class="nav-link btn btn-outline-warning text-white dropdown-toggle" href="#" id="loginDropdown"
+                       role="button" aria-expanded="false">
+                        Login
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="loginDropdown">
+                        <li><a class="dropdown-item" href="/signing_rider">As User</a></li>
+                        <li><a class="dropdown-item" href="/signing_driver">As Driver</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3 p-lg-3">
+                    <a class="nav-link btn btn-outline-warning text-white dropdown-toggle" href="#" id="signupDropdown"
+                       role="button" aria-expanded="false">
+                        Sign up
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="signupDropdown">
+                        <li><a class="dropdown-item" href="/signup_rider">As User</a></li>
+                        <li><a class="dropdown-item" href="/signup_driver">As Driver</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item p-lg-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                         class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="bg-black">
+    <br><br>
+</div>
+
+
+<div id="booking" class="section">
+
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="booking-form">
+                    <div class="form-header">
+
+                        <h1 id="username"></h1>
+                        <h1 id="glow"><span>Make </span>Your <span>Reservation</span></h1>
+                    </div>
+
+                    <form id="make_reservation">
+                        <div class="row  ">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="starting-point" class="form-label">Starting Point</label>
+                                    <select class="form-control" id="starting-point" required>
+                                        <option value="" selected hidden>Choose Starting Point</option>
+                                        <option value="Karachi">Karachi</option>
+                                        <option value="Lahore">Lahore</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Peshawar">Peshawar</option>
+                                        <option value="Islamabad">Islamabad</option>
+                                        <option value="Quetta">Quetta</option>
+                                        <option value="Sargodha">Sargodha</option>
+                                        <option value="Sialkot">Sialkot</option>
+                                        <option value="Bahawalpur">Bahawalpur</option>
+                                        <option value="Sukkur">Sukkur</option>
+                                        <option value="Larkana">Larkana</option>
+                                        <option value="Sheikhupura">Sheikhupura</option>
+                                        <option value="Jhang">Jhang</option>
+                                        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+                                        <option value="Gujrat">Gujrat</option>
+                                        <option value="Kasur">Kasur</option>
+                                        <option value="Sahiwal">Sahiwal</option>
+                                        <option value="Okara">Okara</option>
+                                        <option value="Wah Cantonment">Wah Cantonment</option>
+                                        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+                                        <option value="Mirpur Khas">Mirpur Khas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ending-point" class="form-label">Ending Point</label>
+                                    <select class="form-control" id="ending-point" required>
+                                        <option value="" selected hidden>Choose Ending Point</option>
+                                        <option value="Karachi">Karachi</option>
+                                        <option value="Lahore">Lahore</option>
+                                        <option value="Faisalabad">Faisalabad</option>
+                                        <option value="Rawalpindi">Rawalpindi</option>
+                                        <option value="Multan">Multan</option>
+                                        <option value="Gujranwala">Gujranwala</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Peshawar">Peshawar</option>
+                                        <option value="Islamabad">Islamabad</option>
+                                        <option value="Quetta">Quetta</option>
+                                        <option value="Sargodha">Sargodha</option>
+                                        <option value="Sialkot">Sialkot</option>
+                                        <option value="Bahawalpur">Bahawalpur</option>
+                                        <option value="Sukkur">Sukkur</option>
+                                        <option value="Larkana">Larkana</option>
+                                        <option value="Sheikhupura">Sheikhupura</option>
+                                        <option value="Jhang">Jhang</option>
+                                        <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+                                        <option value="Gujrat">Gujrat</option>
+                                        <option value="Kasur">Kasur</option>
+                                        <option value="Sahiwal">Sahiwal</option>
+                                        <option value="Okara">Okara</option>
+                                        <option value="Wah Cantonment">Wah Cantonment</option>
+                                        <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+                                        <option value="Mirpur Khas">Mirpur Khas</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control  " id="email"
+                                               placeholder="Email">
+                                        <label for="email" class="text-white-50 ">Email address</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Phone</span>
+                                    <input id="number" class="form-control" type="tel"
+                                           placeholder="Enter your phone number">
+                                    <label for="number" class="text-white-50 "></label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input placeholder="Enter Date" id="date" class="form-control" type="date" required>
+                                    <label for="date" class="text-white"></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <span class="form-label">Time Start</span>
+
+                                    <input id="stime" class="form-control" type="time" required>
+                                    <label for="stime" class="text-white-50"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span class="form-label">Enter No of Stops</span>
+                                    <input id="no-stops" class="form-control" type="number"
+                                           placeholder="Enter No of Stops">
+                                    <label for="no-stops" class="text-white-50"></label>
+                                </div>
+                            </div>
+                            <div id="nums">
+
+                            </div>
+
+                            <div class="form-btn">
+                                <button class="submit-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="bg-black">
+    <br><br>
+</div>
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p> Your Today Generated Card</p>
+        <p>Developed by Driver</p>
+    </div>
+</footer>
+
+
+<br>
+<div id="card">
+
+</div>
+
+
+<section class="py-4  bg-light" data-aos="fade-right">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="row">
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Clients</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-left">
+                                <img src="./assets/images/client.png" alt="" height="20">
+                                <span class="display-4">18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Project</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-right">
+                                <img src="./assets/images/project.png" alt="" height="35" width="35">
+                                <span class="display-4">1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>Open Project</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-up">
+                                <img src="./assets/images/open.png" alt="" class="img-fluid"
+                                     style="height: 30px; width: 30px;">
+                                <span class="display-4">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6 mb-4">
+                        <div class="border rounded p-3">
+                            <h3>New Invoices</h3>
+                            <div class="d-flex justify-content-between align-items-center" data-aos="fade-down">
+                                <img src="./assets/images/invoice.png" alt="" height="50" width="50">
+                                <span class="display-4">44</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card">
+                    <img class="card-img" src="./assets/images/deal.jpg" alt="" height="350">
+                    <div class="card-img-overlay d-flex">
+                        <div class="my-auto mx-auto text-center">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-28 bg-dark overflow-hidden position-relative" data-aos="zoom-in" data-aos-delay="200">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <figure class="mb-0 position-relative">
+                    <img class="img-fluid position-relative" src="./assets/images/new.jpg" alt="" style="z-index: 2;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 mt-6 ms-6 mt-lg-12 ms-lg-12"
+                         style="background: #2C2C2C; z-index: 1; opacity: 0.4;"></div>
+                </figure>
+            </div>
+            <div class="col-12 col-md-6 text-md-end">
+                <div class="mw-sm mx-auto ms-md-0">
+                    <h3 class="mb-12 text-primary display-5 lh-sm font-heading fw-bold" data-aos="fade-down">Driver's
+                        Commendation</h3>
+                    <h4 class="mb-10 lh-sm text-white  text-md-center">Your exceptional effort on today's ride did not
+                        go unnoticed. Your professionalism, punctuality, and commitment to safety truly set you apart.
+                        Thank you for going above and beyond to provide an outstanding service.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="bg-black">
+    <br>
+</div>
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="cta-text">
+                            <h4>Find us</h4>
+                            <span>Comsats University Lahore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="fas fa-phone"></i>
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>
+                                <a class="text-decoration-none" href="tel:0301-1234506">0301-1234506</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <i class="far fa-envelope-open"></i>
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <span>
+                                <a class="text-decoration-none" href="mailto:seatshare@info.com">seatshare@info.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="/"><img
+                                    src="./assets/images/Black Gold Modern Minimalist Auto Garage Logo.png"
+                                    class="img-fluid rounded-4" alt="logo"></a>
+                        </div>
+                        <div class="footer-text">
+                            <p>
+
+                                Connect drivers with empty seats to local passengers, making travel more affordable and
+                                efficient. Experience smart, sustainable transportation with SeatShare.</p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        <ul>
+                            <li><a class="text-decoration-none" href="/">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">about</a></li>
+                            <li><a class="text-decoration-none" href="#">services</a></li>
+                            <li><a class="text-decoration-none" href="#">portfolio</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                            <li><a class="text-decoration-none" href="#">About us</a></li>
+                            <li><a class="text-decoration-none" href="#">Our Services</a></li>
+                            <li><a class="text-decoration-none" href="#">Expert Team</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact us</a></li>
+                            <li><a class="text-decoration-none" href="#">Latest News</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <label for="f-mail">
+                                </label><input id="f-mail" type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2018, All Right Reserved <a
+                                href="/">SeatShare</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a class="text-decoration-none" href="/">Home</a></li>
+                            <li><a class="text-decoration-none" href="#">Terms</a></li>
+                            <li><a class="text-decoration-none" href="#">Privacy</a></li>
+                            <li><a class="text-decoration-none" href="#">Policy</a></li>
+                            <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById("make_reservation").addEventListener('submit', async e => {
+        e.preventDefault();
+        const start = document.getElementById("starting-point").value;
+        const end = document.getElementById("ending-point").value;
+        const email = document.getElementById("email").value;
+        const number = document.getElementById("number").value;
+        const date = document.getElementById("date").value;
+        const stime = document.getElementById("stime").value;
+        const Stops = storeStopValues();
+
+        function storeStopValues() {
+            let stopValues = [];
+            // Iterate over the stops and extract their values into an array
+            stopValues = Array.from({length: stops}, (_, index) => {
+                let stopInput = document.getElementById(`stop${index + 1}`);
+                return stopInput ? stopInput.value : "";
+            });
+            return stopValues;
+        }
+
+
+        let data = {
+            start, end, email, number, date, stime, Stops
+        };
+
+        await fetch('/make_reservation_sub', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(async res => {
+            if (res.status === 200) {
+                alert('DataSubmited');
+                location.reload();
+            } else {
+                alert('There is an error in submitting data. Please try again.');
+            }
+        });
+    });
+
+</script>
+
+<script>
+    let c_data;
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+    document.getElementById('username').innerHTML = `Welcome, ${username}!`;
+
+    async function Onload() {
+        const response = await fetch('/make_reservation_onload');
+        c_data = await response.json();
+        console.log(c_data);
+        createCard(c_data);
+
+    }
+
+    Onload();
+
+    function createCard(data) {
+        let cards = document.getElementById('card');
+        card.innerHTML = "";
+        data.forEach(t => {
+            let card =
+                `<div class="wrapper w-100 mx-auto bg-black  ">
+  <div class="booking-card-wrapper bg-info text-warning text-opacity-75  bg-opacity-25 fw-bold">
+    <div class="booking-card-image">
+        <img src="https://img.freepik.com/free-photo/side-view-man-car-delivering-package_23-2148889990.jpg?t=st=1716358854~exp=1716362454~hmac=79775d6ecbab31bbbcea0343e7998397be11525c7f3c35bbb19fa4f0de882215&w=826" alt="Driver Profile Picture">
+    </div>
+    <div class="booking-card-content">
+        <div class="booking-card-description">
+            <h1 class="text-danger ">Ride Details</h1>
+            <p><i class="fas fa-map-marker-alt"></i> From: ${t.start}</p>
+            <p><i class="fas fa-map-marker-alt"></i> To: ${t.end}</p>
+            <p><i class="fas fa-clock"></i> Timing: ${t.stime}</p>
+            <p><i class="fas fa-user"></i> Driver: ${t.driverName}</p>
+            <p><i class="fas fa-phone-square"></i> Phone No: <span id="phone"><a class="text-primary text-decoration-none" href="tel:${t.number}">${t.number}</a></span></p>
+                    <p><i class="fa fa-envelope"></i> Email Address: <span id="phone"><a class="text-primary text-decoration-none" href="mailto:${t.email}">${t.email}</a></span></p>
+        </div>
+
+        <div class="stops bg-dark bg-opacity-50  rounded-4 p-lg-4 mb-4 mt-0 ">
+
+          <ul class="list-unstyled">
+              ${t.stops.map(stop => `<li><i class="fas fa-map-marker-alt"></i> ${stop.stop_location}</li>\n`).join('')}
+
+          </ul>
+      </div>
+        <div class="booking-card-details bg-gradient">
+            <div class="flex">
+                <div class="price text-success"><i class="fas fa-dollar-sign text-success"></i> 50</div>
+                <div class="reviews">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="amount">(5 reviews)</span>
+                </div>
+            </div>
+            <div class="right-align">
+                <button id="${t.res_id}" type="button" onclick="wentToUpdate(this)" class="btn btn-outline-primary">Delete It</button>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  </div>
+`
+            cards.innerHTML += card;
+        })
+    }
+
+    async function wentToUpdate(btn) {
+        console.log(btn.id);
+        const response = fetch(`/delete_reservation/${btn.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        console.log(data);
+        alert("Delted Successfully");
+        location.reload(true);
+    }
+
+</script>
+
+
+<script>
+    AOS.init();
+</script>
+
+<script>
+    let stops = 0;
+    document.getElementById("no-stops").addEventListener('change', e => {
+        let num = parseInt(e.target.value, 10);
+        let stopsContainer = document.getElementById("nums");
+        if (num > -1)
+            if (num > stops) {
+                while (stops < num) {
+                    ++stops;
+                    let lastGroup = stopsContainer.lastElementChild;
+
+                    if (!lastGroup || lastGroup.children.length === 4) {
+                        lastGroup = document.createElement('div');
+                        lastGroup.className = 'row';
+                        stopsContainer.appendChild(lastGroup);
+                    }
+
+                    const stopDiv = document.createElement('div');
+                    stopDiv.className = 'col-md-3';
+                    stopDiv.innerHTML = `<div class="form-group">
+                                    <span class="form-label">Stop ${stops}</span>
+
+                                        <input id="stop${stops}" class="form-control text-white" name="stops" type="text" placeholder="Stop ${stops}" required>
+
+                                 </div>`;
+                    lastGroup.appendChild(stopDiv);
+                }
+            } else {
+                while (stops > num) {
+                    let lastGroup = stopsContainer.lastElementChild;
+
+                    if (lastGroup && lastGroup.children.length > 0) {
+                        lastGroup.removeChild(lastGroup.lastChild);
+                        --stops;
+                    }
+
+                    if (lastGroup && lastGroup.children.length === 0) {
+                        stopsContainer.removeChild(lastGroup);
+                    }
+                }
+            }
+    });
+
+
+</script>
+
+
+</body>
+</html>
